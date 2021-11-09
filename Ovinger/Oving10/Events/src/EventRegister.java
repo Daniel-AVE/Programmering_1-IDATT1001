@@ -88,9 +88,9 @@ public class EventRegister {
                 eventDate.add(events.get(i)); // then add that event to eventDate
             }
         }
-        Comparator<Event> sortByTime = (Event e1, Event e2) -> (int)e1.getDateTime() - (int)e2.getDateTime(); /* comparator to sort the dates from start date to end date
+        Comparator<Event> sortByTime = Comparator.comparingInt((Event e) -> (int) e.getDateTime()); /* comparator to sort the dates from start date to end date
         gets the integer value of DateTime for 1 variable minus integer value of dateTime another variable */
-        Collections.sort(eventDate, sortByTime); // sorts eventDate after the comparator sortByTime
+        eventDate.sort(Comparator.comparing(Event::getDateTime)); // sorts eventDate after the comparator sortByTime
         return eventDate;
     }
 }
