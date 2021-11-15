@@ -33,6 +33,8 @@ public class Property {
         this.lotName = lotName;
         this.area = area;
         this.nameOfOwner = nameOfOwner;
+        // ThrowNewIllegal for godkjente verdier, not illegal arguments
+        // Kan lage propertyID her
     }
 
     /**
@@ -67,7 +69,10 @@ public class Property {
     }
 
     /**
-     * Mutator-method
+     * Mutator-method.
+     * This is the only mutator method created, due to it being the most likely variable to change.
+     * And owner of a home can change when it's sold. But it's not often a property's area is expanded, or the name of a
+     * property is changed. Leading to this being the only mutator-method
      * @param newOwner name of new owner
      */
     public void setNameOfOwner(String newOwner) {
