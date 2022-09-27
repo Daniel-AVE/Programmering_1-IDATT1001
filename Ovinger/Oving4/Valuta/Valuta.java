@@ -1,15 +1,47 @@
+/**
+ * The type Valuta.
+ */
 public class Valuta {
-    private final float kurs;
+    private double rate;
+    private String name;
 
-    public Valuta(float kurs) {
-        this.kurs = kurs;
+    /**
+     * Instantiates a new Valuta.
+     *
+     * @param rate the rate
+     * @param name the name
+     */
+    public Valuta(double rate, String name) {
+        this.rate = rate;
+        this.name = name;
     }
 
-    public float tilNok(float sum) {
-        return sum * kurs;
+    /**
+     * To nok double.
+     *
+     * @param amount the amount
+     * @return the double
+     */
+    public double toNok(double amount) {
+        return amount * rate;
     }
 
-    public float fraNok(float sum) {
-        return sum / kurs;
+    /**
+     * From nok double.
+     *
+     * @param amount the amount
+     * @return the double
+     */
+    public double fromNok(double amount) {
+        return amount / rate;
+    }
+
+    /**
+     * Gets name.
+     *
+     * @return the name
+     */
+    public String getName() {
+        return name;
     }
 }
